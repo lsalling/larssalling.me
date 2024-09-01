@@ -1,0 +1,33 @@
+---
+import Container from "./Container.astro";
+---
+
+<div class="relative">
+  <!-- Line  -->
+  <svg
+    class="h-px w-full text-gray-300"
+    xmlns="http://www.w3.org/2000/svg"
+    aria-hidden="true"
+  >
+    <line
+      x1="0"
+      y1="0"
+      x2="100%"
+      y2="0"
+      stroke="currentColor"
+      stroke-width="1"
+      stroke-dasharray="8"></line>
+  </svg>
+  <!-- Cross -->
+  <Container class="relative" aria-hidden="true">
+    <div class="absolute -left-14">
+      <div class="absolute -top-3 h-6 w-px bg-gray-200"></div>
+      <div class="absolute -left-3 -mt-px h-px w-6 bg-gray-200"></div>
+    </div>
+  </Container>
+  <!-- Shadow -->
+  <div
+    class="absolute inset-x-0 top-0 h-14 bg-gradient-to-b from-[rgba(0,0,0,0.005)]"
+  >
+  </div>
+</div>

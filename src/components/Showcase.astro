@@ -1,0 +1,155 @@
+---
+import { IconLink, IconChevronRight } from "@tabler/icons-react";
+import type { Project } from "../const";
+import { ShowcaseTitleHeader } from "./ShowcaseTitleHeader.tsx";
+import { createId } from "@paralleldrive/cuid2";
+import Container from "./Container.astro";
+
+interface Props {
+  project: Project;
+  shadowOpacity?: number;
+}
+
+const { project } = Astro.props;
+
+const shadowOpacity = 0.025;
+
+const uid = createId();
+---
+
+<section aria-describedby={uid} class="overflow-hidden">
+  <Container
+    class="relative flex flex-col items-end py-4 md:h-[1090px] md:flex-row md:py-0"
+  >
+    <div class="absolute inset-y-0 -left-14 z-10 flex">
+      <div class="h-full w-px bg-gray-200"></div>
+    </div>
+
+    <div class="relative flex flex-col gap-y-4 md:flex-row">
+      <ShowcaseTitleHeader
+        title={project.title}
+        offset={120}
+        id={project.id}
+        client:visible={{ rootMargin: "0px 0px -200px 0px" }}
+      />
+      <div class="z-10 flex flex-col overflow-visible md:mt-36">
+        <div
+          class="relative flex shrink-0 flex-col gap-y-4 md:mr-20 md:w-[400px]"
+        >
+          <span
+            class="relative text-xs font-medium"
+            style={`color: ${project.color}`}
+          >
+            {project.prefix}</span
+          >
+          <div class="relative">
+            <div
+              class="absolute -left-[4.5rem] top-1/2 z-[11] flex w-[4.5rem] -translate-y-1/2 items-center gap-x-2 pr-2"
+            >
+              <div
+                class="relative flex shrink-0 rounded-md ring-[8px] ring-gray-50"
+              >
+                <div class="absolute inset-0 rounded-md border border-black/15">
+                </div>
+                <img
+                  src={project.icon.src}
+                  alt="Favicon of the project"
+                  height="32"
+                  width="32"
+                  class="rounded-md bg-gray-100 shadow-md"
+                />
+              </div>
+
+              <div class="h-px w-full bg-gray-200"></div>
+            </div>
+            <h2
+              class="scroll-mt-32 text-5xl font-medium text-gray-950"
+              id={uid}
+            >
+              {project.title}
+            </h2>
+          </div>
+          <div class="flex items-center gap-x-2 text-sm text-gray-500">
+            <span class="">{project.role}</span>
+            {
+              project.link && (
+                <>
+                  <span class="text-gray-200" aria-hidden="true">
+                    |
+                  </span>
+                  <a
+                    href={project.link}
+                    target="_blank"
+                    class="flex items-center gap-x-1 transition-colors"
+                  >
+                    <IconLink className="size-4" />
+                    <span>{project.link}</span>
+                  </a>
+                </>
+              )
+            }
+          </div>
+          <p class="whitespace-pre-line leading-relaxed text-gray-700">
+            {project.description}
+          </p>
+          <div class="h-px w-full bg-black/5" aria-hidden="true"></div>
+          <span class="flex cursor-default items-center gap-x-1 self-start">
+            <span class="text-[14px] text-gray-400">Case study coming soon</span
+            >
+            <IconChevronRight
+              size={14}
+              className="translate-x-0 text-gray-200 transition-transform group-hover:translate-x-1"
+            />
+          </span>
+        </div>
+      </div>
+      <div
+        class="rounded-dashed-border relative z-10 -mr-[700px] rounded-[32px] bg-[#f6f7f8] p-3.5 md:mt-14"
+      >
+        <div
+          class="absolute -inset-x-4 -bottom-4 z-20 hidden h-80 bg-gradient-to-t from-gray-50 via-gray-50 md:block"
+        >
+        </div>
+        <div class="relative w-[700px] md:h-[800px] md:w-[1200px]">
+          <img
+            src={project.image.src}
+            alt={project.image.alt}
+            height="800"
+            width="1200"
+            class="rounded-[20px] bg-cover bg-center shadow-lg ring-1 ring-black ring-opacity-[8%]"
+          />
+        </div>
+      </div>
+    </div>
+  </Container>
+
+  <style define:vars={{ shadowOpacity }} is:global>
+    .rounded-dashed-border {
+      background-image: url("data:image/svg+xml,%3csvg width='100%25' height='100%25' xmlns='http://www.w3.org/2000/svg'%3e%3crect width='100%25' height='100%25' fill='none' rx='32' ry='32' stroke='%2300000030' stroke-width='1' stroke-dasharray='8' stroke-dashoffset='0' stroke-linecap='round'/%3e%3c/svg%3e");
+    }
+
+    .accent:after {
+      content: attr(data-project-title);
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-color: white;
+      background-image: linear-gradient(to bottom, #fdfdfd 0%, #fafafa 100%);
+      background-size: 100%;
+      -webkit-background-clip: text;
+      -moz-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      -moz-text-fill-color: transparent;
+    }
+
+    .accent:before {
+      text-shadow:
+        -1px 1px 0 rgba(0, 0, 0, var(--shadowOpacity)),
+        1px 1px 0 rgba(0, 0, 0, var(--shadowOpacity)),
+        1px -1px 0 rgba(0, 0, 0, var(--shadowOpacity)),
+        -1px -1px 0 rgba(0, 0, 0, var(--shadowOpacity));
+    }
+  </style>
+</section>

@@ -1,0 +1,89 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Hero from "../components/Hero.astro";
+import { projects, smallProjects } from "../const";
+import Showcase from "../components/Showcase.astro";
+import Container from "../components/Container.astro";
+import makingImage from "../static/images/makin.png";
+import { IconChevronRight } from "@tabler/icons-react";
+import HorizontalLine from "../components/HorizontalLine.astro";
+---
+
+<Layout title="Lars Salling">
+  <main>
+    <div>
+      <Hero />
+      <div class="overflow-hidden">
+        <div class="flex flex-col">
+          <Showcase project={projects[0]} />
+          <HorizontalLine />
+          <Showcase project={projects[1]} />
+        </div>
+        <HorizontalLine />
+        <div class="relative z-20">
+          <Container class="relative flex flex-col">
+            <div class="absolute inset-y-0 -left-14 h-full w-px bg-gray-200">
+            </div>
+            <div class="flex flex-col gap-y-4 py-12">
+              <div class="">
+                <div class="relative">
+                  <div
+                    class="absolute inset-y-0 -left-14 h-full w-0.5 bg-gray-950"
+                  >
+                  </div>
+                  <div class="flex items-center gap-x-1.5">
+                    <h2 class="text-sm font-medium text-gray-950">
+                      Other work
+                    </h2>
+                  </div>
+                </div>
+              </div>
+              <ul class="grid grid-cols-1 gap-4 py-4 md:grid-cols-2 md:py-8">
+                {
+                  smallProjects.map((project) => (
+                    <li class="rounded-dashed-border relative z-10 rounded-[32px] bg-[#f6f7f8] p-3">
+                      <div class="relative flex w-full flex-col gap-y-4 rounded-3xl bg-white p-4 shadow ring-1 ring-black/5">
+                        <div class="relative h-60 overflow-hidden rounded-xl bg-gradient-to-t from-gray-100 to-white shadow-inner">
+                          <div class="dotted-background z-[2 absolute inset-0" />
+                          <div class="absolute inset-0 z-[4] rounded-xl border border-black/10" />
+                          <div class="absolute left-8 top-8 z-[3] overflow-hidden rounded-tl-lg shadow-xl ring-1 ring-black/5">
+                            <img src={project.image.src} />
+                          </div>
+                        </div>
+                        <div class="flex flex-col gap-y-3 bg-white">
+                          <h3 class="text-lg font-medium text-gray-950">
+                            {project.title}
+                          </h3>
+                          <p class="text-sm leading-relaxed text-gray-700">
+                            {project.description}
+                          </p>
+                          <hr class="border-black/5" />
+                          <span class="flex cursor-default items-center gap-x-1 self-start">
+                            <span class="text-[14px] text-gray-400">
+                              Case study coming soon
+                            </span>
+                            <IconChevronRight
+                              size={14}
+                              className="translate-x-0 text-gray-200 transition-transform group-hover:translate-x-1"
+                            />
+                          </span>
+                        </div>
+                      </div>
+                    </li>
+                  ))
+                }
+              </ul>
+            </div>
+          </Container>
+        </div>
+      </div>
+    </div>
+  </main>
+</Layout>
+
+<style>
+  .dotted-background {
+    background-image: radial-gradient(circle, #00000010 0.5px, transparent 1px);
+    background-size: 8px 8px;
+  }
+</style>

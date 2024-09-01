@@ -1,0 +1,132 @@
+---
+import {
+  IconBrandTwitter,
+  IconBrandLinkedin,
+  IconBrandGithub,
+  IconBrandDribbble,
+  IconArrowDown,
+} from "@tabler/icons-react";
+import Container from "../components/Container.astro";
+import { Image } from "astro:assets";
+import avatar from "../static/images/me.png";
+import HorizontalLine from "./HorizontalLine.astro";
+
+const socials = [
+  {
+    name: "Github",
+    icon: IconBrandGithub,
+    href: "https://github.com/lsalling",
+  },
+  {
+    name: "Twitter",
+    icon: IconBrandTwitter,
+    href: "https://x.com/salling_lars",
+  },
+  {
+    name: "LinkedIn",
+    icon: IconBrandLinkedin,
+    href: "https://www.linkedin.com/in/lars-salling-43a1521b6/",
+  },
+  {
+    name: "Dribbble",
+    icon: IconBrandDribbble,
+    href: "https://dribbble.com/larssalling",
+  },
+];
+
+const links = [
+  {
+    name: "Home",
+    href: "/",
+  },
+  {
+    name: "Writing",
+    href: "/case",
+  },
+];
+---
+
+<div class="bg-gradient-to-t from-gray-50 to-white">
+  <Container class="relative pb-12 pt-12 md:pt-48">
+    <div class="absolute -left-14 h-32 w-px bg-gradient-to-b from-white"></div>
+    <div
+      class="absolute inset-y-0 -left-14 w-px bg-gradient-to-t from-gray-200 via-gray-200"
+    >
+    </div>
+    <section class="">
+      <!-- <nav class="mb-4 max-w-screen-sm pb-4">
+        <ul class="flex items-center gap-x-3">
+          {
+            links.map((link) => (
+              <li class="text-[14px] text-gray-700">
+                <a href={link.href}>{link.name}</a>
+              </li>
+            ))
+          }
+        </ul>
+      </nav> -->
+      <div class="flex max-w-lg flex-col gap-y-6">
+        <div class="flex items-center gap-x-3">
+          <div class="relative rounded-full">
+            <div class="absolute inset-0 rounded-full border border-black/10">
+            </div>
+            <Image
+              width="52"
+              height="52"
+              src={avatar.src}
+              alt="Lars Salling"
+              class="rounded-full bg-gray-200 shadow"
+            />
+          </div>
+          <div class="relative flex flex-col">
+            <h1 class="font-medium text-gray-950">Lars Salling</h1>
+            <span class="text-sm text-gray-700"
+              >Product designer, full-stack developer</span
+            >
+          </div>
+        </div>
+        <p class="leading-relaxed text-gray-950">
+          Experienced product designer and full-stack developer from Odense,
+          Denmark. Thriving on the synergy between creativity and technology in
+          web development.
+          <br />
+          <br />
+          Enthusiastic about web accessibility, design systems, and scalable web
+          design.
+        </p>
+        <ul class="flex items-center gap-3 self-start">
+          {
+            socials.map((social) => (
+              <li>
+                <a
+                  href={social.href}
+                  class="flex items-center gap-x-1 rounded text-gray-700 hover:text-gray-950"
+                  target="_blank"
+                  rel="noopener noreferrer nofollow"
+                >
+                  <social.icon size={18} />
+                  <span class="text-sm">{social.name}</span>
+                </a>
+              </li>
+            ))
+          }
+        </ul>
+        <div class="">
+          <div class="relative mt-8 md:mt-52">
+            <div class="absolute inset-y-0 -left-14 h-full w-0.5 bg-gray-950">
+            </div>
+            <div
+              class="animate-in fade-in slide-in-from-left-3 flex items-center gap-x-1.5 duration-500 ease-in-out"
+            >
+              <h2 class="text-sm font-medium text-gray-950">
+                Personal projects I'm hacking on
+              </h2>
+              <IconArrowDown size={18} />
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </Container>
+  <HorizontalLine />
+</div>
