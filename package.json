@@ -10,28 +10,28 @@
     "astro": "astro"
   },
   "dependencies": {
-    "@astrojs/check": "^0.9.3",
-    "@astrojs/react": "^3.6.2",
-    "@astrojs/tailwind": "^5.1.0",
-    "@astrojs/vercel": "^7.8.0",
-    "@fontsource-variable/inter": "^5.0.20",
+    "@astrojs/check": "^0.9.4",
+    "@astrojs/react": "^4.3.1",
+    "@astrojs/tailwind": "^6.0.2",
+    "@astrojs/vercel": "^8.2.7",
+    "@fontsource-variable/inter": "^5.2.6",
     "@paralleldrive/cuid2": "^2.2.2",
-    "@tabler/icons-react": "^3.13.0",
-    "@types/react": "^18.3.4",
-    "@types/react-dom": "^18.3.0",
-    "@vercel/analytics": "^1.3.1",
-    "astro": "^4.14.5",
+    "@tabler/icons-react": "^3.34.1",
+    "@types/react": "^19.1.12",
+    "@types/react-dom": "^19.1.9",
+    "@vercel/analytics": "^1.5.0",
+    "astro": "^5.13.7",
     "clsx": "^2.1.1",
-    "react": "^18.3.1",
-    "react-dom": "^18.3.1",
-    "tailwind-merge": "^2.5.2",
-    "tailwindcss": "^3.4.10",
+    "react": "^19.1.1",
+    "react-dom": "^19.1.1",
+    "tailwind-merge": "^3.3.1",
+    "tailwindcss": "^4.1.13",
     "tailwindcss-animate": "^1.0.7",
-    "typescript": "^5.5.4"
+    "typescript": "^5.9.2"
   },
   "devDependencies": {
-    "prettier": "^3.3.3",
+    "prettier": "^3.6.2",
     "prettier-plugin-astro": "^0.14.1",
-    "prettier-plugin-tailwindcss": "^0.6.6"
+    "prettier-plugin-tailwindcss": "^0.6.14"
   }
 }
