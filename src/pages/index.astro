@@ -4,7 +4,7 @@ import Hero from "../components/Hero.astro";
 import { projects, smallProjects } from "../const";
 import Showcase from "../components/Showcase.astro";
 import Container from "../components/Container.astro";
-import makingImage from "../static/images/makin.png";
+import "../assets/global.css";
 import { IconChevronRight } from "@tabler/icons-react";
 import HorizontalLine from "../components/HorizontalLine.astro";
 ---
@@ -46,7 +46,7 @@ import HorizontalLine from "../components/HorizontalLine.astro";
                         <div class="relative h-60 overflow-hidden rounded-xl bg-gradient-to-t from-gray-100 to-white shadow-inner">
                           <div class="dotted-background z-[2 absolute inset-0" />
                           <div class="absolute inset-0 z-[4] rounded-xl border border-black/10" />
-                          <div class="absolute left-8 top-8 z-[3] overflow-hidden rounded-tl-lg shadow-xl ring-1 ring-black/5">
+                          <div class="absolute top-8 left-8 z-[3] overflow-hidden rounded-tl-lg shadow-xl ring-1 ring-black/5">
                             <img src={project.image.src} />
                           </div>
                         </div>
