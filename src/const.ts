@@ -5,8 +5,10 @@ import {
 } from "@tabler/icons-react";
 import maellaLogo from "./static/images/maella-icon.png";
 import wasabeeLogo from "./static/images/wasabee-icon.png";
+import trawleLogo from "./static/images/trawle-logo.png";
 import maellaImage from "./static/images/Feed.png";
 import wasabeeImage from "./static/images/wasabee-image.png";
+import trawleImage from "./static/images/trawle-image.png";
 import makinImage from "./static/images/makin.png";
 import headlessCommerceImage from "./static/images/headless-commerce.png";
 
@@ -36,51 +38,87 @@ export type Project = {
 
 export const projects: Project[] = [
   {
-    id: "maella",
-    title: "Maella",
-    // link: "https://maella.net",
+    id: "trawle",
+    title: "Trawle",
+    link: "https://trawle.com",
     prefix: "2024 - Present",
-    color: "#0e8b67",
-    description: `A personal project in the form of a social platform for sharing, publishing and discovering recipes. Features natural language search, allowing users to find recipes based on ingredients, dietary restrictions, or cuisine types.
-      \nBuilt with React and Remix. Uses Drizzle for interacting with a Postgres database, React Aria and Tailwind CSS for accessibility and styling. Hosted on AWS with infrastructure handled using SST.
-      \nCurrently in development with no public release planned as of now.`,
-    icon: maellaLogo,
+    color: "#2563eb",
+    description: `Trawle is a modern job search engine built to revolutionize how people find and apply for jobs. The platform focuses on providing a superior user experience with upcoming features like automatic job matching, resume-based filtering, and intelligent job recommendations.
+      \nBuilt using TanStack Start with infrastructure orchestrated using SST on AWS for scalable and reliable deployment.`,
+    icon: trawleLogo,
     role: "Design, development",
     image: {
-      src: maellaImage.src,
-      alt: "Screenshot of a a news feed on Maella.",
+      src: trawleImage.src,
+      alt: "Screenshot of the Trawle job search platform.",
     },
     links: [
       {
         label: "Website",
-        href: "https://maella.net",
+        href: "https://trawle.com",
         icon: IconWorld,
-      },
-      {
-        icon: IconBrandGithub,
-        label: "Github",
-        href: "https://github.com/lsalling/maella.git",
       },
     ],
     technologies: [
+      {
+        name: "TanStack Start",
+        logo: "https://avatars.githubusercontent.com/u/72518640?s=200&v=4",
+      },
       {
         name: "SST",
         logo: "https://avatars.githubusercontent.com/u/66570915?s=200&v=4",
       },
       {
-        name: "Remix",
-        logo: "https://avatars.githubusercontent.com/u/64235328?s=200&v=4",
-      },
-      {
-        name: "Drizzle",
-        logo: "https://avatars.githubusercontent.com/u/108468352?s=48&v=4",
-      },
-      {
-        name: "React Aria",
-        logo: "https://avatars.githubusercontent.com/u/476009?s=200&v=4",
+        name: "AWS",
+        logo: "https://a0.awsstatic.com/libra-css/images/logos/aws_smile-header-desktop-en-white_59x35.png",
       },
     ],
   },
+  // {
+  //   id: "maella",
+  //   title: "Maella",
+  //   // link: "https://maella.net",
+  //   prefix: "2024 - Present",
+  //   color: "#0e8b67",
+  //   description: `A personal project in the form of a social platform for sharing, publishing and discovering recipes. Features natural language search, allowing users to find recipes based on ingredients, dietary restrictions, or cuisine types.
+  //     \nBuilt with React and Remix. Uses Drizzle for interacting with a Postgres database, React Aria and Tailwind CSS for accessibility and styling. Hosted on AWS with infrastructure handled using SST.
+  //     \nCurrently in development with no public release planned as of now.`,
+  //   icon: maellaLogo,
+  //   role: "Design, development",
+  //   image: {
+  //     src: maellaImage.src,
+  //     alt: "Screenshot of a a news feed on Maella.",
+  //   },
+  //   links: [
+  //     {
+  //       label: "Website",
+  //       href: "https://maella.net",
+  //       icon: IconWorld,
+  //     },
+  //     {
+  //       icon: IconBrandGithub,
+  //       label: "Github",
+  //       href: "https://github.com/lsalling/maella.git",
+  //     },
+  //   ],
+  //   technologies: [
+  //     {
+  //       name: "SST",
+  //       logo: "https://avatars.githubusercontent.com/u/66570915?s=200&v=4",
+  //     },
+  //     {
+  //       name: "Remix",
+  //       logo: "https://avatars.githubusercontent.com/u/64235328?s=200&v=4",
+  //     },
+  //     {
+  //       name: "Drizzle",
+  //       logo: "https://avatars.githubusercontent.com/u/108468352?s=48&v=4",
+  //     },
+  //     {
+  //       name: "React Aria",
+  //       logo: "https://avatars.githubusercontent.com/u/476009?s=200&v=4",
+  //     },
+  //   ],
+  // },
   {
     id: "wasabee",
     title: "Wasabee",
