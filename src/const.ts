@@ -11,6 +11,7 @@ import wasabeeImage from "./static/images/wasabee-image.png";
 import trawleImage from "./static/images/trawle-image.png";
 import makinImage from "./static/images/makin.png";
 import headlessCommerceImage from "./static/images/headless-commerce.png";
+import lydieImage from "./static/images/screenshot_sidebar.png";
 
 export type Project = {
   id: string;
@@ -37,6 +38,43 @@ export type Project = {
 };
 
 export const projects: Project[] = [
+  {
+    id: "lydie",
+    title: "Lydie",
+    link: "https://lydie.co",
+    prefix: "2025 - Present",
+    color: "#292929",
+    description: `Lydie is an AI-native writing workspace built with exceptional performance and simplicity in mind.
+      \nThe idea of Lydie was initially to make a "Cursor"-like editor for writing, but it has also evolved into a cross-platform publishing platform with integrations such as GitHub, Shopify and Wordpress.
+      \nTo accommodate performance and UX needs, Lydie uses a bleeding-edge tech stack, most notably using Zero Sync - a general-purpose sync engine that help making interactions near-instant.`,
+    icon: wasabeeLogo,
+    role: "Design, development, marketing",
+    image: {
+      src: lydieImage.src,
+      alt: "Screenshot of the Trawle job search platform.",
+    },
+    links: [
+      {
+        label: "Website",
+        href: "https://trawle.com",
+        icon: IconWorld,
+      },
+    ],
+    technologies: [
+      {
+        name: "TanStack Start",
+        logo: "https://avatars.githubusercontent.com/u/72518640?s=200&v=4",
+      },
+      {
+        name: "SST",
+        logo: "https://avatars.githubusercontent.com/u/66570915?s=200&v=4",
+      },
+      {
+        name: "AWS",
+        logo: "https://a0.awsstatic.com/libra-css/images/logos/aws_smile-header-desktop-en-white_59x35.png",
+      },
+    ],
+  },
   {
     id: "trawle",
     title: "Trawle",
@@ -119,39 +157,39 @@ export const projects: Project[] = [
   //     },
   //   ],
   // },
-  {
-    id: "wasabee",
-    title: "Wasabee",
-    prefix: "2022 - Present",
-    link: "https://wasabee.app",
-    color: "#8fb990",
-    description: `Wasabee is a web platform for creating and hosting blogs for recipes and other cooking-related content. The project is built around a multi-tenancy architecture in which customers can host their blog under a subdomain or a custom domain.
-    \nThis project was my first venture into building a SaaS and has taught me countless lessons along the way.`,
-    icon: wasabeeLogo,
-    role: "Design, development",
-    image: {
-      src: wasabeeImage.src,
-      alt: "",
-    },
-    links: [
-      {
-        label: "Website",
-        href: "https://maella.net",
-        icon: IconWorld,
-      },
-      {
-        icon: IconBrandGithub,
-        label: "Github",
-        href: "https://github.com/lsalling/maella.git",
-      },
-    ],
-    technologies: [
-      {
-        name: "Next.js",
-        logo: "https://nextjs.org/static/favicon/favicon-32x32.png",
-      },
-    ],
-  },
+  // {
+  //   id: "wasabee",
+  //   title: "Wasabee",
+  //   prefix: "2022 - Present",
+  //   link: "https://wasabee.app",
+  //   color: "#8fb990",
+  //   description: `Wasabee is a web platform for creating and hosting blogs for recipes and other cooking-related content. The project is built around a multi-tenancy architecture in which customers can host their blog under a subdomain or a custom domain.
+  //   \nThis project was my first venture into building a SaaS and has taught me countless lessons along the way.`,
+  //   icon: wasabeeLogo,
+  //   role: "Design, development",
+  //   image: {
+  //     src: wasabeeImage.src,
+  //     alt: "",
+  //   },
+  //   links: [
+  //     {
+  //       label: "Website",
+  //       href: "https://maella.net",
+  //       icon: IconWorld,
+  //     },
+  //     {
+  //       icon: IconBrandGithub,
+  //       label: "Github",
+  //       href: "https://github.com/lsalling/maella.git",
+  //     },
+  //   ],
+  //   technologies: [
+  //     {
+  //       name: "Next.js",
+  //       logo: "https://nextjs.org/static/favicon/favicon-32x32.png",
+  //     },
+  //   ],
+  // },
 ];
 
 export const smallProjects = [
