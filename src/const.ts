@@ -11,7 +11,7 @@ import wasabeeImage from "./static/images/wasabee-image.png";
 import trawleImage from "./static/images/trawle-image.png";
 import makinImage from "./static/images/makin.png";
 import headlessCommerceImage from "./static/images/headless-commerce.png";
-import lydieImage from "./static/images/screenshot_sidebar.png";
+import lydieImage from "./static/images/screenshot_lydie.png";
 
 export type Project = {
   id: string;
