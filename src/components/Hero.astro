@@ -27,11 +27,6 @@ const socials = [
     icon: IconBrandLinkedin,
     href: "https://www.linkedin.com/in/larssalling/",
   },
-  {
-    name: "Dribbble",
-    icon: IconBrandDribbble,
-    href: "https://dribbble.com/larssalling",
-  },
 ];
 ---
 
@@ -72,7 +67,7 @@ const socials = [
           Enthusiastic about web accessibility, design systems, and scalable web
           design.
         </p>
-        <ul class="flex items-center gap-3 self-start">
+        <ul class="flex items-center gap-5 self-start">
           {
             socials.map((social) => (
               <li>
@@ -82,7 +77,6 @@ const socials = [
                   target="_blank"
                   rel="noopener noreferrer nofollow"
                 >
-                  <social.icon size={18} />
                   <span class="text-sm">{social.name}</span>
                 </a>
               </li>
