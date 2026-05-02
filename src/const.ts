@@ -77,8 +77,8 @@ export const projects: Project[] = [
   },
   {
     id: "trawle",
-    title: "Trawle",
-    link: "https://trawle.com",
+    title: "Kibo",
+    link: "https://kibo.careers",
     prefix: "2024 - Present",
     color: "#2563eb",
     description: `Trawle is a modern job search engine built to revolutionize how people find and apply for jobs. The platform focuses on providing a superior user experience with upcoming features like automatic job matching, resume-based filtering, and intelligent job recommendations.
@@ -92,7 +92,7 @@ export const projects: Project[] = [
     links: [
       {
         label: "Website",
-        href: "https://trawle.com",
+        href: "https://kibo.careers",
         icon: IconWorld,
       },
     ],
