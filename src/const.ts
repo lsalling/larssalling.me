@@ -76,12 +76,12 @@ export const projects: Project[] = [
     ],
   },
   {
-    id: "trawle",
+    id: "kibo",
     title: "Kibo",
     link: "https://kibo.careers",
     prefix: "2024 - Present",
     color: "#2563eb",
-    description: `Trawle is a modern job search engine built to revolutionize how people find and apply for jobs. The platform focuses on providing a superior user experience with upcoming features like automatic job matching, resume-based filtering, and intelligent job recommendations.
+    description: `Kibo (previously Trawle) is a modern job search engine built to revolutionize how people find and apply for jobs. The platform focuses on providing a superior user experience with upcoming features like automatic job matching, resume-based filtering, and intelligent job recommendations.
       \nBuilt using TanStack Start with infrastructure orchestrated using SST on AWS for scalable and reliable deployment.`,
     icon: trawleLogo,
     role: "Design, development",
