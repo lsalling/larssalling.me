@@ -63,13 +63,13 @@ const uid = createId();
               <div class="h-px w-full bg-gray-200"></div>
             </div>
             <h2
-              class="scroll-mt-32 text-5xl font-medium text-gray-950"
+              class="scroll-mt-32 text-3xl font-medium text-gray-950"
               id={uid}
             >
               {project.title}
             </h2>
           </div>
-          <div class="flex items-center gap-x-2 text-sm text-gray-500">
+          <div class="flex items-center gap-x-2 text-[15px] text-gray-500">
             <span class="">{project.role}</span>
             {
               project.link && (
@@ -89,18 +89,20 @@ const uid = createId();
               )
             }
           </div>
-          <p class="leading-relaxed whitespace-pre-line text-gray-700">
+          <p
+            class="text-[15px] leading-relaxed whitespace-pre-line text-gray-700"
+          >
             {project.description}
           </p>
-          <div class="h-px w-full bg-black/5" aria-hidden="true"></div>
-          <span class="flex cursor-default items-center gap-x-1 self-start">
+          <!-- <div class="h-px w-full bg-black/5" aria-hidden="true"></div> -->
+          <!-- <span class="flex cursor-default items-center gap-x-1 self-start">
             <span class="text-[14px] text-gray-400">Case study coming soon</span
             >
             <IconChevronRight
               size={14}
               className="translate-x-0 text-gray-200 transition-transform group-hover:translate-x-1"
             />
-          </span>
+          </span> -->
         </div>
       </div>
       <div

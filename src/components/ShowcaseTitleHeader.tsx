@@ -19,7 +19,7 @@ export function ShowcaseTitleHeader({ title, offset, id }: Props) {
       id={id}
       className="absolute -top-[240px] hidden md:block"
       style={{
-        translate: "-55px 0",
+        translate: "-0px 0",
         left: `-${offset}px`,
         clipPath: `inset(0 0 0 ${offset}px)`,
       }}
