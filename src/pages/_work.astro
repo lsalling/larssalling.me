@@ -1,0 +1,113 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Container from "../components/Container.astro";
+import "../assets/global.css";
+import { work } from "../work";
+---
+
+<Layout title="Work · Lars Salling">
+  <main class="pt-12 pb-24 md:pt-32">
+    <Container class="flex flex-col gap-y-20 md:gap-y-28">
+      <header class="flex max-w-lg flex-col gap-y-4">
+        <a href="/" class="text-sm text-gray-500 hover:text-gray-950">
+          Lars Salling
+        </a>
+        <h1 class="text-2xl font-medium tracking-tight text-gray-950">
+          Recent work
+        </h1>
+        <p class="text-[15px] leading-relaxed text-gray-700">
+          Small pieces of what I've been building lately. Every clip is recorded
+          from the running product at 60 frames per second, with demo or sample
+          data.
+        </p>
+      </header>
+
+      {
+        work.map((group) => (
+          <section
+            id={group.id}
+            aria-labelledby={`${group.id}-title`}
+            class="flex flex-col gap-y-10"
+          >
+            <div class="flex max-w-lg flex-col gap-y-2">
+              <h2 id={`${group.id}-title`} class="font-medium text-gray-950">
+                <a href={group.link} class="hover:underline">
+                  {group.title}
+                </a>
+              </h2>
+              <p class="text-[15px] leading-relaxed text-gray-700">
+                {group.intro}
+              </p>
+            </div>
+            <ul class="grid grid-cols-1 gap-x-6 gap-y-12 md:grid-cols-2">
+              {group.snippets.map((snippet) => (
+                <li
+                  id={snippet.id}
+                  class:list={[
+                    "flex flex-col gap-y-4",
+                    snippet.wide && "md:col-span-2",
+                  ]}
+                >
+                  <div
+                    class="aspect-video overflow-hidden rounded-xl ring-1 ring-black/5"
+                    style={`background-color:${snippet.tile}`}
+                  >
+                    {snippet.video ? (
+                      <video
+                        data-snippet
+                        src={`/work/${snippet.asset}.mp4`}
+                        poster={`/work/${snippet.asset}.webp`}
+                        autoplay
+                        loop
+                        muted
+                        playsinline
+                        preload="metadata"
+                        aria-label={snippet.title}
+                        class="size-full object-contain"
+                      />
+                    ) : (
+                      <img
+                        src={`/work/${snippet.asset}.webp`}
+                        alt={snippet.title}
+                        loading="lazy"
+                        class="size-full object-contain"
+                      />
+                    )}
+                  </div>
+                  <div class="flex max-w-xl flex-col gap-y-1.5">
+                    <h3 class="text-[15px] font-medium text-gray-950">
+                      {snippet.title}
+                    </h3>
+                    <p class="text-sm leading-relaxed text-gray-600">
+                      {snippet.description}
+                    </p>
+                  </div>
+                </li>
+              ))}
+            </ul>
+          </section>
+        ))
+      }
+    </Container>
+  </main>
+</Layout>
+
+<script>
+  // Only what's on screen plays, and reduced motion gets the still.
+  const videos = document.querySelectorAll<HTMLVideoElement>("[data-snippet]");
+  if (matchMedia("(prefers-reduced-motion: reduce)").matches) {
+    for (const video of videos) {
+      video.autoplay = false;
+      video.pause();
+    }
+  } else {
+    const observer = new IntersectionObserver((entries) => {
+      for (const { target, isIntersecting } of entries) {
+        const video = target as HTMLVideoElement;
+        if (isIntersecting) void video.play();
+        else video.pause();
+      }
+    });
+    for (const video of videos) observer.observe(video);
+  }
+</script>

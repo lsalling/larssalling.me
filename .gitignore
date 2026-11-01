@@ -24,3 +24,7 @@ pnpm-debug.log*
 .idea/
 
 .vercel/
+
+# playground captures and the web assets derived from them, unpublished for now
+playground/out/
+public/work/
