@@ -1,7 +1,12 @@
 {
-  "name": "port2",
+  "name": "larssalling.me",
   "type": "module",
   "version": "0.0.1",
+  "private": true,
+  "packageManager": "bun@1.4.4",
+  "engines": {
+    "node": "24.x"
+  },
   "scripts": {
     "dev": "astro dev",
     "start": "astro dev",
@@ -10,28 +15,28 @@
     "astro": "astro"
   },
   "dependencies": {
-    "@astrojs/check": "^0.9.4",
-    "@astrojs/react": "^4.3.1",
-    "@astrojs/vercel": "^8.2.7",
-    "@fontsource-variable/inter": "^5.2.6",
-    "@paralleldrive/cuid2": "^2.2.2",
-    "@tabler/icons-react": "^3.34.1",
-    "@tailwindcss/vite": "^4.1.13",
-    "@types/react": "^19.1.12",
-    "@types/react-dom": "^19.1.9",
-    "@vercel/analytics": "^1.5.0",
-    "astro": "^5.13.7",
+    "@astrojs/react": "^7.1.2",
+    "@astrojs/vercel": "^11.0.17",
+    "@fontsource-variable/inter": "^5.3.0",
+    "@paralleldrive/cuid2": "^3.3.0",
+    "@tabler/icons-react": "^3.50.0",
+    "@vercel/analytics": "^2.0.1",
+    "astro": "^7.4.4",
     "clsx": "^2.1.1",
-    "react": "^19.1.1",
-    "react-dom": "^19.1.1",
-    "tailwind-merge": "^3.3.1",
-    "tailwindcss": "^4.1.13",
-    "tailwindcss-animate": "^1.0.7",
-    "typescript": "^5.9.2"
+    "react": "^19.3.1",
+    "react-dom": "^19.3.1",
+    "tailwind-merge": "^3.7.0"
   },
   "devDependencies": {
-    "prettier": "^3.6.2",
-    "prettier-plugin-astro": "^0.14.1",
-    "prettier-plugin-tailwindcss": "^0.6.14"
+    "@astrojs/check": "^0.9.12",
+    "@tailwindcss/vite": "^4.3.3",
+    "@types/react": "^19.3.0",
+    "@types/react-dom": "^19.3.0",
+    "playwright": "1.64.1",
+    "prettier": "^3.9.10",
+    "prettier-plugin-astro": "^1.1.2",
+    "prettier-plugin-tailwindcss": "^0.8.1",
+    "tailwindcss": "^4.3.3",
+    "typescript": "^6.0.3"
   }
 }

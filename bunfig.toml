@@ -1,0 +1,4 @@
+[install]
+# Skip versions published in the last 3 days; most compromised releases are
+# pulled within that window. In seconds, because bunx rejects "3d".
+minimumReleaseAge = 259200
